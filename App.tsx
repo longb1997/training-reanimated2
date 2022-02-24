@@ -13,17 +13,22 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import CommonButton from './src/components/CommonButton';
+import GestureHandle from './src/screen/GestureHandle';
 import Timing from './src/screen/Timing';
 
 const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({navigation}: any) => {
-  const goTiming = () => {
-    navigation.navigate('Timing');
+  const goScreen = (name: string) => {
+    navigation.navigate(name);
   };
   return (
     <SafeAreaView style={styles.container}>
-      <CommonButton text="Timing" onPress={goTiming} />
+      <CommonButton text="Timing" onPress={() => goScreen('Timing')} />
+      <CommonButton
+        text="GestureHandle"
+        onPress={() => goScreen('GestureHandle')}
+      />
     </SafeAreaView>
   );
 };
@@ -34,6 +39,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Timing" component={Timing} />
+        <Stack.Screen name="GestureHandle" component={GestureHandle} />
       </Stack.Navigator>
     </NavigationContainer>
   );
