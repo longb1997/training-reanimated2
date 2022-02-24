@@ -1,0 +1,24 @@
+import React from 'react';
+import {Pressable, StyleSheet, Text} from 'react-native';
+
+const CommonButton = ({text, onPress}: any) => {
+  return (
+    <Pressable style={styles.container} onPress={onPress}>
+      <Text style={styles.text}>{text}</Text>
+    </Pressable>
+  );
+};
+
+export default CommonButton;
+
+const styles = StyleSheet.create({
+  container: {
+    width: 100,
+    height: 50,
+  },
+  text: {
+    fontSize: 14,
+    color: '#30458D',
+    textAlign: 'center',
+  },
+});
