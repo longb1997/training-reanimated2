@@ -15,10 +15,16 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import CommonButton from './src/components/CommonButton';
 import ChangeColor from './src/screen/ChangeColor';
 import GestureHandle from './src/screen/GestureHandle';
+import ImageViewer from './src/screen/ImageViewer';
 import Swiper from './src/screen/Swiper';
 import Timing from './src/screen/Timing';
 
 const Stack = createNativeStackNavigator();
+import {LogBox} from 'react-native';
+
+LogBox.ignoreLogs([
+  "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
+]);
 
 const HomeScreen = ({navigation}: any) => {
   const goScreen = (name: string) => {
@@ -33,8 +39,12 @@ const HomeScreen = ({navigation}: any) => {
       />
       <CommonButton text="Swiper" onPress={() => goScreen('Swiper')} />
       <CommonButton
-        text="ChangeColor"
+        text="Change Color"
         onPress={() => goScreen('ChangeColor')}
+      />
+      <CommonButton
+        text="Image Viewer"
+        onPress={() => goScreen('ImageViewer')}
       />
     </SafeAreaView>
   );
@@ -49,6 +59,7 @@ const App = () => {
         <Stack.Screen name="GestureHandle" component={GestureHandle} />
         <Stack.Screen name="Swiper" component={Swiper} />
         <Stack.Screen name="ChangeColor" component={ChangeColor} />
+        <Stack.Screen name="ImageViewer" component={ImageViewer} />
       </Stack.Navigator>
     </NavigationContainer>
   );
