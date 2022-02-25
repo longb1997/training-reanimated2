@@ -1,13 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
@@ -21,6 +11,7 @@ import Timing from './src/screen/Timing';
 
 const Stack = createNativeStackNavigator();
 import {LogBox} from 'react-native';
+import InstagramLike from './src/screen/InstagramLike';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -46,6 +37,10 @@ const HomeScreen = ({navigation}: any) => {
         text="Image Viewer"
         onPress={() => goScreen('ImageViewer')}
       />
+      <CommonButton
+        text="Instagram Like"
+        onPress={() => goScreen('InstagramLike')}
+      />
     </SafeAreaView>
   );
 };
@@ -60,6 +55,7 @@ const App = () => {
         <Stack.Screen name="Swiper" component={Swiper} />
         <Stack.Screen name="ChangeColor" component={ChangeColor} />
         <Stack.Screen name="ImageViewer" component={ImageViewer} />
+        <Stack.Screen name="InstagramLike" component={InstagramLike} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet} from 'react-native';
+import {Dimensions, Image} from 'react-native';
 import {
   PinchGestureHandler,
   PinchGestureHandlerGestureEvent,
