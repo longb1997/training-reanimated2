@@ -1,10 +1,10 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text} from 'react-native';
 
-const CommonButton = ({text, onPress}: any) => {
+const CommonButton = ({text, onPress, containerStyle, textStyle}: any) => {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
+    <Pressable style={[styles.container, containerStyle]} onPress={onPress}>
+      <Text style={[styles.text, textStyle]}>{text}</Text>
     </Pressable>
   );
 };

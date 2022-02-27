@@ -13,6 +13,7 @@ const Stack = createNativeStackNavigator();
 import {LogBox} from 'react-native';
 import InstagramLike from './src/screen/InstagramLike';
 import ColorPicker from './src/screen/ColorPicker';
+import CircleProgress from './src/screen/CircleProgres';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -46,6 +47,10 @@ const HomeScreen = ({navigation}: any) => {
         text="Color Picker"
         onPress={() => goScreen('ColorPicker')}
       />
+      <CommonButton
+        text="Circle Progress"
+        onPress={() => goScreen('CircleProgress')}
+      />
     </SafeAreaView>
   );
 };
@@ -62,6 +67,13 @@ const App = () => {
         <Stack.Screen name="ImageViewer" component={ImageViewer} />
         <Stack.Screen name="InstagramLike" component={InstagramLike} />
         <Stack.Screen name="ColorPicker" component={ColorPicker} />
+        <Stack.Screen
+          name="CircleProgress"
+          component={CircleProgress}
+          options={{
+            headerShown: true,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
